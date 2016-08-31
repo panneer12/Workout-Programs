@@ -1,4 +1,4 @@
-var Person = function(config) {
+/*var Person = function(config) {
     this.name = config.name;
     this.age = config.age;
     this.occupation = config.occupation;
@@ -6,16 +6,17 @@ var Person = function(config) {
 
 Person.prototype.work = function(){
  return this.name + " is working. ";
-}
+}*/
 
+//defining class in Backbon JS
 var Person = Backbone.Model.extend({
 	defaults:{
 		name : 'Panneer',
 		age: 25,
 		occupation: 'software developer'
 	},
-	work.function(){
-		return this.get('name')+ 'is working.';
+	work: function(){
+		return this.get('name') + 'is working.';
 	}
 
 });
