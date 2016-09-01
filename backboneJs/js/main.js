@@ -15,8 +15,19 @@ var Person = Backbone.Model.extend({
 		age: 25,
 		occupation: 'software developer'
 	},
+	validate: function(attributes){
+		if(attributes.age< 0){
+			return 'Age must be postive.';
+		}
+		if(!attributes.name){
+			return 'Every person must have a name';
+		}
+	},
 	work: function(){
 		return this.get('name') + 'is working.';
 	}
+	person.on('error'.function(model,error){
+		console.log(error);
+	});
 
 });
