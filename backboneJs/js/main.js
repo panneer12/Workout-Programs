@@ -25,7 +25,7 @@ var Person = Backbone.Model.extend({
 	},
 	work: function(){
 		return this.get('name') + 'is working.';
-	}
+	},
 	person.on('error'.function(model,error){
 		console.log(error);
 	});
