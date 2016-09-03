@@ -14,8 +14,8 @@ var Person = Backbone.Model.extend({
 		name : 'Panneer',
 		age: 25,
 		occupation: 'software developer'
-	},
-	validate: function(attributes){
+	}
+	/*validate: function(attributes){
 		if(attributes.age< 0){
 			return 'Age must be postive.';
 		}
@@ -25,9 +25,23 @@ var Person = Backbone.Model.extend({
 	},
 	work: function(){
 		return this.get('name') + 'is working.';
-	},
+	}
 	person.on('error'.function(model,error){
 		console.log(error);
-	});
+	});*/
 
+});
+
+var PersonView = Backbone.View.extend({
+	tagName: 'li',
+	classNmae: 'person',
+	id: 'person-id',
+
+	initialize: function(){
+		this.render();
+
+	},
+	render: function(){
+		this.$el.html(this.model.get('name')+'('+this.model.get('age')+')'+this.model.get('occupation'))
+	}
 });
